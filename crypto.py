@@ -8,7 +8,7 @@ def encrypt_text():
         encryptedString = ""
         i = 0
         while i < 16: #looping through number of chars in my name
-            stringList[i] = (ord(stringList[i])) #adding ascii values to temp list
+            stringList[i] = (ord(stringList[i])) #converting characters to ascii equiv
             i+=1
         print ("before encryption", stringList)
         key = 5 #the chosen key for this project
@@ -25,9 +25,9 @@ def encrypt_text():
 
 def decrypt_text(inputKey, encryptedList):
     i = 0
-    encryptedChar = list(encryptedList)
+    encryptedChar = list(encryptedList) # converting encrypted string to characters
     while i < 16:
-        encryptedChar[i] = (ord(encryptedChar[i]))
+        encryptedChar[i] = (ord(encryptedChar[i])) #converting characters to ascii
         i+=1
     j = 0
     while j < 16:
