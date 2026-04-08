@@ -3,14 +3,15 @@
 def encrypt_text():
     with open("plain.txt") as file:
         plainText = file.read()
-        stringList = list(plainText.encode(encoding = "ascii")) #converting string to list then converting to ascii
-        #print ("before encryption", stringList)
+        plainText = plainText.encode(encoding = "ascii") #converting to ascii values
+        stringList = list(plainText) #converting to list  of ascii
+        print ("before encryption", stringList)
         key = 5 #the chosen key for this project
         i = 0
         while i < 16:
             stringList[i] = (stringList[i] + key) #shift 5 spaces forward
             i+=1
-        #print("encrypted number", stringList)
+        print("encrypted number", stringList)
         i = 0
         chars = []
         while i<16:
@@ -23,7 +24,8 @@ def encrypt_text():
 ########################### DECRYPTION ####################################
 
 def decrypt_text(inputKey, encryptedList):
-    encryptedChar = list(encryptedList.encode(encoding = "ascii"))
+    encryptedList = encryptedList.encode( encoding = "ascii")
+    encryptedChar = list(encryptedList)
     j = 0
     while j < 16:
         encryptedChar[j] = encryptedChar[j] - inputKey #reversing encryption by moving 5 spaces back
