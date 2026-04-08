@@ -11,7 +11,11 @@ def encrypt_text():
             stringList[i] = (stringList[i] + key) #shift 5 spaces forward
             i+=1
         #print("encrypted number", stringList)
-        chars  = [chr(n) for n in stringList]   #converting ascii values back to char 
+        i = 0
+        chars = []
+        while i<16:
+            chars.append(chr(stringList[i])) #converting each ascii number to char
+            i+=1
         encryptedString = ''.join(chars) #joining chars back to string
         print ("Encrypted Text is: ", encryptedString)
         return encryptedString #returning list of ascii to decrypt
@@ -19,14 +23,17 @@ def encrypt_text():
 ########################### DECRYPTION ####################################
 
 def decrypt_text(inputKey, encryptedList):
-    i = 0
     encryptedChar = list(encryptedList.encode(encoding = "ascii"))
     j = 0
     while j < 16:
         encryptedChar[j] = encryptedChar[j] - inputKey #reversing encryption by moving 5 spaces back
         j+=1
     #print("decrypted number", encryptedChar)
-    chars  = [chr(n) for n in encryptedChar] #converting ascii values to char
+    chars = []
+    i = 0
+    while i<16:
+        chars.append(chr(encryptedChar[i]))
+        i+=1
     encryptedString = ''.join(chars)
     print ("Your decrypted text is: ", encryptedString)
 
