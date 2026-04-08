@@ -5,13 +5,13 @@ def encrypt_text():
         plainText = file.read()
         plainText = plainText.encode(encoding = "ascii") #converting to ascii values
         stringList = list(plainText) #converting to list  of ascii
-        print ("before encryption", stringList)
+        #print ("before encryption", stringList)
         key = 5 #the chosen key for this project
         i = 0
         while i < 16:
             stringList[i] = (stringList[i] + key) #shift 5 spaces forward
             i+=1
-        print("encrypted number", stringList)
+        #print("encrypted number", stringList)
         i = 0
         chars = []
         while i<16:
