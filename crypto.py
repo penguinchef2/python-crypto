@@ -1,4 +1,4 @@
-########################### ENCRYPTION ####################################
+#encryption
 
 def encrypt_text():
     with open("plain.txt") as file:
@@ -21,7 +21,7 @@ def encrypt_text():
         print ("Encrypted Text is: ", encryptedString)
         return encryptedString #returning list of ascii to decrypt
 
-########################### DECRYPTION ####################################
+#decryption
 
 def decrypt_text(inputKey, encryptedList):
     encryptedList = encryptedList.encode( encoding = "ascii")
@@ -40,7 +40,7 @@ def decrypt_text(inputKey, encryptedList):
     print ("Your decrypted text is: ", encryptedString)
 
 
-########################## MAIN #######################################
+#main loop
 
 inputKey = 0
 
